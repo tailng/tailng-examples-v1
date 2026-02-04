@@ -1,0 +1,55 @@
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-4xl font-bold mb-8">Tailng UI Components</h1>
+
+  @for (category of categories; track category.name) {
+    <div class="mb-12">
+      <div class="flex items-center gap-3 mb-4">
+        <h2 class="text-2xl font-semibold">{{ category.name }}</h2>
+        @if (category.internal) {
+          <span class="px-2 py-1 text-xs bg-gray-200 text-gray-700 rounded">Internal</span>
+        }
+        <span class="text-sm text-gray-500">{{ category.package }}</span>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        @for (component of category.components; track component.name) {
+          <a
+            [routerLink]="component.route"
+            class="block p-4 border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all cursor-pointer"
+          >
+            <div class="flex items-start justify-between mb-2">
+              <h3 class="text-lg font-medium">{{ component.name }}</h3>
+              @if (component.internal) {
+                <span class="px-2 py-0.5 text-xs bg-gray-100 text-gray-600 rounded">Internal</span>
+              }
+            </div>
+            <div class="flex items-center gap-2 mt-2">
+              <span
+                class="px-2 py-0.5 text-xs rounded"
+                [class.bg-green-100]="component.status === 'done'"
+                [class.text-green-700]="component.status === 'done'"
+                [class.bg-yellow-100]="component.status === 'in-progress'"
+                [class.text-yellow-700]="component.status === 'in-progress'"
+                [class.bg-gray-100]="component.status === 'backlog'"
+                [class.text-gray-700]="component.status === 'backlog'"
+              >
+                {{ component.status }}
+              </span>
+              <span
+                class="px-2 py-0.5 text-xs rounded"
+                [class.bg-red-100]="component.priority === 'high'"
+                [class.text-red-700]="component.priority === 'high'"
+                [class.bg-blue-100]="component.priority === 'medium'"
+                [class.text-blue-700]="component.priority === 'medium'"
+                [class.bg-gray-100]="component.priority === 'low'"
+                [class.text-gray-700]="component.priority === 'low'"
+              >
+                {{ component.priority }}
+              </span>
+            </div>
+          </a>
+        }
+      </div>
+    </div>
+  }
+</div>

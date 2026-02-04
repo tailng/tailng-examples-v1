@@ -222,10 +222,30 @@ export class ${componentName}StylingComponent {}
 ];
 
 components.forEach((comp) => {
-  const filePath = path.join(basePath, `${kebabName}-${comp.name}`, `${kebabName}-${comp.name}.component.ts`);
-  if (!fs.existsSync(filePath)) {
-    fs.writeFileSync(filePath, comp.template);
-    console.log(`Created file: ${filePath}`);
+  const componentDir = path.join(basePath, `${kebabName}-${comp.name}`);
+  const tsFilePath = path.join(componentDir, `${kebabName}-${comp.name}.component.ts`);
+  const htmlFilePath = path.join(componentDir, `${kebabName}-${comp.name}.component.html`);
+  
+  if (!fs.existsSync(tsFilePath)) {
+    // Extract template content and create HTML file
+    const templateMatch = comp.template.match(/template:\s*\\?`([\s\S]*?)\\?`/);
+    if (templateMatch) {
+      let htmlContent = templateMatch[1];
+      htmlContent = htmlContent.replace(/\\`/g, '`');
+      htmlContent = htmlContent.replace(/\\\$/g, '$');
+      fs.writeFileSync(htmlFilePath, htmlContent);
+      
+      // Update component to use templateUrl
+      const componentContent = comp.template.replace(
+        /template:\s*\\?`[\s\S]*?\\?`/,
+        `templateUrl: './${kebabName}-${comp.name}.component.html'`
+      );
+      fs.writeFileSync(tsFilePath, componentContent);
+      console.log(`Created files: ${tsFilePath} and ${htmlFilePath}`);
+    } else {
+      fs.writeFileSync(tsFilePath, comp.template);
+      console.log(`Created file: ${tsFilePath}`);
+    }
   }
 });
 

@@ -41,7 +41,7 @@ const kebabName = routeToComponentName(componentRoute);
 const categoryFolder = folderPath.split('/')[0];
 const componentFolder = folderPath.split('/').slice(1).join('/');
 
-const basePath = path.join(__dirname, '..', 'src', 'app', 'pages', 'components', categoryFolder, componentFolder);
+const basePath = path.join(__dirname, '..', 'src', 'app', 'pages', 'component', categoryFolder, componentFolder);
 
 // Create directories
 const dirs = [
@@ -100,7 +100,7 @@ export const ${kebabName.replace(/-/g, '')}Routes: Routes = [
 ];
 `;
 
-const routesFile = path.join(basePath, `${kebabName}-routes.ts`);
+const routesFile = path.join(basePath, `${kebabName}.routes.ts`);
 if (!fs.existsSync(routesFile)) {
   fs.writeFileSync(routesFile, routesContent);
   console.log(`Created file: ${routesFile}`);

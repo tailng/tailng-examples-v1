@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterLink, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { TngBreadcrumbs } from '@tociva/tailng-ui/navigation';
+import { TngBreadcrumbs } from '@tailng-ui/ui/navigation';
 
 interface BreadcrumbItem {
   label: string;

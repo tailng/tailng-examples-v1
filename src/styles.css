@@ -1,4 +1,4 @@
-@import "@tociva/tailng-theme/tokens/index.css";
+@import "@tailng-ui/theme/tokens/index.css";
 
 @tailwind base;
 @tailwind components;

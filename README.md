@@ -2,10 +2,10 @@
 
 This starter sets up **Angular (v21)** + **Tailwind CSS (v3.4.x)** + **Tailng** packages:
 
-- `@tociva/tailng-cdk`
-- `@tociva/tailng-theme` (tokens + Tailwind preset/plugin)
-- `@tociva/tailng-icons`
-- `@tociva/tailng-ui`
+- `@tailng-ui/cdk`
+- `@tailng-ui/theme` (tokens + Tailwind preset/plugin)
+- `@tailng-ui/icons`
+- `@tailng-ui/ui`
 
 > **Important:** Angular 21 does **not** include Tailwind. You must install Tailwind separately.
 
@@ -38,7 +38,7 @@ yarn add @angular/cdk
 ## 3) Install Tailng packages
 
 ```bash
-yarn add   @tociva/tailng-cdk   @tociva/tailng-theme   @tociva/tailng-icons   @tociva/tailng-ui
+yarn add   @tailng-ui/cdk   @tailng-ui/theme   @tailng-ui/icons   @tailng-ui/ui
 ```
 
 ---
@@ -72,14 +72,14 @@ module.exports = {
 Edit `tailwind.config.js`:
 
 ```js
-const tailngPreset = require("@tociva/tailng-theme/tailwind/tailng.preset.cjs");
+const tailngPreset = require("@tailng-ui/theme/tailwind/tailng.preset.cjs");
 
 module.exports = {
   presets: [tailngPreset],
   content: [
     "./src/**/*.{html,ts}",
-    "./node_modules/@tociva/tailng-ui/**/*.{mjs,js}",
-    "./node_modules/@tociva/tailng-icons/**/*.{mjs,js}",
+    "./node_modules/@tailng-ui/ui/**/*.{mjs,js}",
+    "./node_modules/@tailng-ui/icons/**/*.{mjs,js}",
   ],
 };
 ```
@@ -91,7 +91,7 @@ module.exports = {
 Edit `src/styles.css`:
 
 ```css
-@import "@tociva/tailng-theme/tokens/index.css";
+@import "@tailng-ui/theme/tokens/index.css";
 
 @tailwind base;
 @tailwind components;
@@ -139,7 +139,7 @@ Update app.component.html with below content
 
 ```ts
 import { Component, signal } from '@angular/core';
-import { TngSlideToggle } from '@tociva/tailng-ui/form-controls';
+import { TngSlideToggle } from '@tailng-ui/ui/form-controls';
 
 @Component({
   selector: 'app-root',

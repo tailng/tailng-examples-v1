@@ -19,6 +19,7 @@ export class App implements OnInit {
     // 2) If not found, check document.referrer (e.g., StackBlitz editor URL)
     if (!demoPath) {
       const ref = document.referrer;
+      console.log('referrer', ref);
       if (ref) {
         try {
           const refUrl = new URL(ref);

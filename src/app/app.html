@@ -1,6 +1,13 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
+<div class="prose max-w-none p-4">
+  <header class="font-semibold bg-gray-100 flex items-center justify-center p-2">
+    <h1 class="m-0">Checkbox Component</h1>
+  </header>
+
+ 
+<form [formGroup]="form">
+  <tng-checkbox formControlName="terms" label="I agree to the terms" />
+  <tng-checkbox formControlName="newsletter" label="Subscribe to newsletter" />
+</form>
+
+
 </div>

@@ -1,6 +1,13 @@
 import { bootstrapApplication } from '@angular/platform-browser';
-import { appConfig } from './app/app.config';
 import { App } from './app/app';
-
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+import { bootstrapAlarm, bootstrapBell} from '@ng-icons/bootstrap-icons'
+import { provideIcons} from '@ng-icons/core'
+bootstrapApplication(App,{
+  providers:[
+    provideIcons({
+    bootstrapAlarm,
+    bootstrapBell
+  }),
+  ],
+  
+}).catch((err) => console.error(err));

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TngIcon } from '@tailng-ui/icons/icon'
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [ TngIcon],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

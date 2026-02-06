@@ -3,3 +3,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    margin: 10px;
+    display: inline-flex;
+    max-width: auto;
+}

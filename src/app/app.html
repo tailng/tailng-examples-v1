@@ -1,6 +1,21 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<form [formGroup]="form">
+  <!-- Basic Textarea -->
+  <h6>Basic Textarea</h6>
+  <tng-textarea formControlName="message" placeholder="Your message" [rows]="4" />
+
+  <!-- Textarea with custom style using klass -->
+  <h6>Textarea with Klass</h6>
+  <tng-textarea
+    formControlName="message"
+    placeholder="Custom styled"
+    klass="border-2 border-blue-500 rounded-lg shadow-md min-h-[100px]"
+  />
+
+  <!-- Textarea with more rows -->
+  <h6>Textarea with more rows</h6>
+  <tng-textarea formControlName="message" placeholder="Taller" [rows]="8" />
+
+  <!-- Disabled Textarea -->
+  <h6>Disabled Textarea</h6>
+  <tng-textarea formControlName="message" placeholder="Disabled" [disabled]="true" />
+</form>

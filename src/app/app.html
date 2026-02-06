@@ -1,6 +1,37 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Login Form</h6>
+
+<form [formGroup]="registerForm" class="flex flex-col gap-4">
+  <!--UserId with disabled state-->
+  <tng-text-input formControlName="userId" placeholder="userId" [disabled]="true" />
+  <!--Input With type text-->
+  <tng-text-input formControlName="name" placeholder="Enter the name" type="text" />
+  <!--Input With type email and readonly state-->
+  <tng-text-input
+    formControlName="emailId"
+    placeholder="Enter the email"
+    type="email"
+    [readonly]="true"
+  />
+  <!--Input With type password-->
+  <tng-text-input formControlName="password" placeholder="Enter the password" type="password" />
+  <!--Input With type tel and validation state-->
+  <tng-text-input
+    formControlName="phoneNo"
+    type="tel"
+    placeholder="Enter the mobile number"
+    [maxlength]="10"
+    [pattern]="'^[0-9]{10}$'"
+  ></tng-text-input>
+
+  @if (registerForm.controls.phoneNo.touched && registerForm.controls.phoneNo.invalid) {
+    <div class="text-xs text-red-600 mt-1">
+      @if (registerForm.controls.phoneNo.hasError('required')) {
+        Phone number is required
+      } @else if (registerForm.controls.phoneNo.hasError('pattern')) {
+        Phone number must be exactly 10 digits
+      } @else if (registerForm.controls.phoneNo.hasError('maxlength')) {
+        Phone number cannot exceed 10 digits
+      }
+    </div>
+  }
+</form>

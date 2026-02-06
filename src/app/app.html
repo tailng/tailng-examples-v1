@@ -1,6 +1,31 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<strong>Reactive Form Using Number Input</strong>
+<form [formGroup]="item">
+    <h6>Number Input with validation</h6>
+  <!--Number Input with validation-->
+  <tng-number-input
+    formControlName="quantity"
+    placeholder="Quantity"
+    [min]="0"
+    [max]="120"
+    [step]="1"
+  />
+
+  @if (item.controls.quantity.touched && item.controls.quantity.invalid) {
+    <div class="text-sm text-red-600 mt-1">
+      @if (item.controls.quantity.hasError('required')) {
+        Quantity is required
+      } @else if (item.controls.quantity.hasError('min')) {
+        Quantity must be at least 1
+      } @else if (item.controls.quantity.hasError('max')) {
+        Quantity must be no more than 120
+      }
+    </div>
+  }
+
+  <h6>Number Input with readonly state</h6>
+  <!--Number Input with readonly state-->
+  <tng-number-input formControlName="price" placeholder="Price" [readonly]="true" />
+  <h6>Number Input with disabled state</h6>
+  <!--Number Input with disabled state-->
+  <tng-number-input placeholder="Disabled" [disabled]="true" />
+</form>

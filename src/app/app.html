@@ -1,13 +1,33 @@
-<div class="prose max-w-none p-4">
-  <header class="font-semibold bg-gray-100 flex items-center justify-center p-2">
-    <h1 class="m-0">Checkbox Component</h1>
-  </header>
+<form [formGroup]="form" class="flex flex-col gap-4">
 
- 
-<form [formGroup]="form">
-  <tng-checkbox formControlName="terms" label="I agree to the terms" />
-  <tng-checkbox formControlName="newsletter" label="Subscribe to newsletter" />
+  <h6>Basic checkbox</h6>
+
+  <tng-checkbox formControlName="art" label="Art" />
+  <tng-checkbox formControlName="music" label="Music" />
+
+  <h6>Checkbox with rootKlass</h6>
+
+  <tng-checkbox formControlName="art" label="Art"
+    rootKlass="inline-flex items-center gap-3 cursor-pointer p-2 rounded-lg border-2 border-blue-500" />
+
+  <h6>Checkbox with inputKlass</h6>
+
+  <tng-checkbox formControlName="art" label="Art" inputKlass="h-5 w-5 rounded-full accent-green-600" />
+
+  <h6>Checkbox with labelKlass</h6>
+
+  <tng-checkbox formControlName="opt" label="Custom label" labelKlass="text-lg font-bold text-purple-600" />
+
+<h6>Checkbox with validation</h6>
+
+<tng-checkbox formControlName="terms" label="I agree to the terms" [required]="true" />
+
+@if (termsCtrl.touched && termsCtrl.invalid) {
+  <p class="text-sm text-red-600">You must agree to the terms.</p>
+}
+
+<h6>Disabled checkbox</h6>
+<tng-checkbox formControlName="newsletter" label="Subscribe" />
+<tng-checkbox formControlName="notifications" label="Notifications" [disabled]="true" />
+
 </form>
-
-
-</div>

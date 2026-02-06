@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { TngCheckbox } from '@tailng-ui/ui/form';
 
 @Component({
@@ -10,7 +10,17 @@ import { TngCheckbox } from '@tailng-ui/ui/form';
 })
 export class App {
   form = new FormGroup({
-    terms: new FormControl(false, { nonNullable: true }),
-    newsletter: new FormControl(false, { nonNullable: true }),
+    art: new FormControl(false, { nonNullable: true }),
+    music: new FormControl(false, { nonNullable: true }),
+  terms: new FormControl(false, {
+    nonNullable: true,
+    validators: [Validators.requiredTrue],
+  }),
   });
+
+  get termsCtrl() {
+    return this.form.controls.terms;
+  }
+
+  
 }

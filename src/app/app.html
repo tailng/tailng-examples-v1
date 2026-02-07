@@ -1,6 +1,26 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic Badge</h6>
+<!--basic badge with variant and value-->
+<tng-badge [value]="128" [max]="99" variant="danger">
+  <button type="button" class="rounded-md border-2 px-3 py-2 text-sm">Messages</button>
+</tng-badge>
+<h6>Badge Dot</h6>
+<tng-badge dot variant="primary">
+  <button type="button" class="rounded-md border-2 px-3 py-2 text-sm">Inbox</button>
+</tng-badge>
+
+<h6>Badge with badgeKlass</h6>
+<!-- badge with badgeKlass-->
+<tng-badge [value]="count()" variant="danger" badgeKlass="bg-red-800">
+  <span class="px-2 py-2 border-2">Notifications</span>
+</tng-badge>
+
+<h6>Badge variants and positions</h6>
+<!-- badge with badgeKlass-->
+<tng-badge [value]="1" variant="success"><span class="px-2 py-2 border-2">success</span></tng-badge>
+<tng-badge [value]="1" variant="warning"><span class="px-2 py-2 border-2">warning</span></tng-badge>
+
+<tng-badge [value]="3" position="top-right" variant="danger"><span class="px-2 py-2 border-2">top-right</span></tng-badge>
+<tng-badge [value]="3" position="bottom-right" variant="danger"><span class="px-2 py-2 border-2">bottom-right</span></tng-badge>
+<h6>Badge with Zero Value show</h6>
+<!-- badge with badgeKlass-->
+<tng-badge [value]="0" showZero variant="neutral"><span class="px-2 py-2 border-2">Cart</span></tng-badge>

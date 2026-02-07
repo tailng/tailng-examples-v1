@@ -33,9 +33,9 @@
     "@tailng-ui/cdk": "^0.19.0",
     "@tailng-ui/icons": "^0.19.0",
     "@tailng-ui/theme": "^0.19.0",
-    "@tailng-ui/ui": "^0.20.0",
+    "@tailng-ui/ui": "^0.22.0",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "@angular/build": "^21.1.2",

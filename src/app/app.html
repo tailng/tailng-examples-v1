@@ -1,6 +1,24 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
+<strong>Basic Divider</strong>
+<!--Basic Divider-->
+<tng-divider></tng-divider>
+
+<strong>Divider with lineKlass and labelKlass </strong>
+<!--Divider with lineKlass and labelKlass Styling-->
+<tng-divider label="Themed" lineKlass="border-blue-900" labelKlass="text-red-500 text-xs font-medium" />
+
+<strong>Horizontal Divider with label </strong>
+<!--Horizontal divider-->
+<tng-divider label="Start" align="start" />
+<tng-divider label="End" align="end" />
+
+<strong>vertical Divider</strong>
+<!--Vertical divider-->
+<div class="flex items-center gap-4 h-10">
+  <span>Item A</span>
+  <tng-divider orientation="vertical" rootKlass="h-full shrink-0" />
+  <span>Item B</span>
 </div>
+
+<strong>Dashed Divider</strong>
+<!--Dashed divider with boolean value-->
+<tng-divider [dashed]="true" />

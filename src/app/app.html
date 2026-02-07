@@ -1,6 +1,44 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<form [formGroup]="address">
+  <h6>Basic Chips(Mutli-value input)</h6>
+  <!--Select multiple values-->
+  <tng-chips
+    formControlName="countries"
+    [options]="options()"
+    placeholder="Add countries…"
+    [displayWith]="displayCountry"
+    [allowFreeText]="false"
+    (search)="onSearch($event)"
+  />
+  <h6>Customized Chips with styling</h6>
+  <!--basic chips with styling-->
+  <tng-chips
+    formControlName="countries"
+    [options]="options()"
+    [displayWith]="displayCountry"
+    [allowFreeText]="false"
+    (search)="onSearch($event)"
+    rootKlass="border-2 border-red-500"
+    chipKlass="text-blue-600"
+    inputKlass="text-yellow-600"
+    containerKlass="w-full min-h-[20px] px-3 py-2 flex flex-wrap gap-2 border-2 border-blue-500 rounded-lg bg-blue-50/30"
+    
+  />
+   <h6>Custom chip and option templates</h6>
+  <!--Chip drowdown and display text customized-->
+  <tng-chips formControlName="countries" [options]="options()"
+  [displayWith]="displayCountry" [allowFreeText]="false"
+  (search)="onSearch($event)">
+  <ng-template #chipTpl let-item>
+    <span class="flex items-center gap-2">
+      <span class="opacity-70 text-red-600">({{ item.code }})</span>
+      <span class="font-semibold">{{ item.name }}</span>
+    </span>
+  </ng-template>
+  <ng-template #optionTpl let-item>
+    <div class="flex items-center gap-2">
+      <span class="opacity-70">({{ item.code }})</span>
+      <span class="font-semibold text-red-600">{{ item.name }}</span>
+    </div>
+  </ng-template>
+  </tng-chips>
+</form>

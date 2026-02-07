@@ -1,6 +1,31 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Button Variants</h6>
+<!--Button variants-->
+<tng-button variant="solid">Solid</tng-button>
+<tng-button variant="outline">Outline</tng-button>
+<tng-button variant="ghost">Ghost</tng-button>
+
+<h6>Button Sizes</h6>
+<!--Button sizes-->
+<tng-button size="sm">Small</tng-button>
+<tng-button size="md">Medium</tng-button>
+<tng-button size="lg">Large</tng-button>
+
+<h6>Button with Klass styling</h6>
+<!--Button with klass styling-->
+<tng-button klass="bg-red-400 text-red-200 hover:bg-red-800">Custom danger</tng-button>
+
+<h6>Button with loading styling</h6>
+<!--Button with loading styles-->
+<tng-button
+  [loading]="true"
+  spinnerKlass="h-5 w-5 animate-spin rounded-full border-2 border-current border-t-transparent"
+  >Loading</tng-button
+>
+
+<h6>Button with disabled state and block(full width)</h6>
+<!--Button with disabled state and block(full width)-->
+<tng-button
+  [block]="true"
+  [disabled]="true"
+  >disabled And block</tng-button
+>

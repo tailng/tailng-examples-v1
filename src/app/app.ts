@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-
+import { TngCard, TngCardFooter, TngCardHeader } from  '@tailng-ui/ui/layout'
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [ TngCard,TngCardHeader,TngCardFooter],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

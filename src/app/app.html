@@ -1,6 +1,48 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6><u>Basic Tabs and Tab Panel</u></h6>
+<!--Basic tabs and tab panel with value, and disable state-->
+<tng-tabs defaultValue="overview">
+  <tng-tab value="overview">Overview</tng-tab>
+  <tng-tab value="account">Account</tng-tab>
+  <tng-tab value="settings" [disabled]="true">Settings</tng-tab>
+  <tng-tab-panel value="overview">Overview Content</tng-tab-panel>
+  <tng-tab-panel value="account">Account Content</tng-tab-panel>
+  <tng-tab-panel value="settings">Settings Content</tng-tab-panel>
+</tng-tabs>
+<h6><u>Basic Tabs and Tab Panel with styling</u></h6>
+<!--Basic tabs and tab panel with value-->
+<tng-tabs defaultValue="one" listKlass="flex gap-6 border-b border-border" panelKlass="pt-5">
+  <tng-tab
+    value="one"
+    tabKlass="pb-3 text-sm font-medium border-b-2 border-red-300"
+    activeKlass="border-primary text-blue-400"
+    inactiveKlass="text-muted-foreground hover:text-foreground"
+  >
+    Tab One
+  </tng-tab>
+  <tng-tab
+    value="two"
+    tabKlass="pb-3 text-sm font-medium border-b-2 border-red-300"
+    activeKlass="border-primary text-blue-400"
+    inactiveKlass="text-muted-foreground hover:text-foreground"
+  >
+    Tab Two
+  </tng-tab>
+  <tng-tab-panel value="one"
+    ><div class="rounded-lg bg-slate-300 p-4 text-sm text-green-700">
+      Underline style.
+    </div></tng-tab-panel
+  >
+  <tng-tab-panel value="two"
+    ><div class="rounded-lg bg-slate-300 p-4 text-sm text-green-700">Content.</div></tng-tab-panel
+  >
+</tng-tabs>
+<h6><u>Basic Tabs and Tab Panel with current tab</u></h6>
+<!--Basic tabs and tab panel with current tab display-->
+Current: <code class="rounded bg-slate-100 px-1">{{ tabValue() }}</code>
+
+<tng-tabs [value]="tabValue()" (valueChange)="tabValue.set($event)" defaultValue="account">
+  <tng-tab value="overview">Overview</tng-tab>
+  <tng-tab value="settings">Settings</tng-tab>
+  <tng-tab-panel value="overview">Overview Content</tng-tab-panel>
+  <tng-tab-panel value="settings">Settings Content</tng-tab-panel>
+</tng-tabs>

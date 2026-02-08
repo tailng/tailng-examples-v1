@@ -1,6 +1,36 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic Accordion with multiple open</h6>
+<!--Basic Accordion with multiple open state-->
+<tng-accordion [multiple]="true">
+  <tng-expansion-panel>
+    <div tngExpansionTitle>Panel A</div>
+    <div tngExpansionContent>Panel A Content</div>
+  </tng-expansion-panel>
+  <tng-expansion-panel>
+    <div tngExpansionTitle>Panel B</div>
+    <div tngExpansionContent>Panel B Content</div>
+  </tng-expansion-panel>
+</tng-accordion>
+<h6>Accordion with collapsible and autoOpenFirst</h6>
+<!--Basic Accordion with collapsible and autoOpenFirst state-->
+<tng-accordion [collapsible]="false" [autoOpenFirst]="true">
+  <tng-expansion-panel>
+    <div tngExpansionTitle>Panel A</div>
+    <div tngExpansionContent>Panel A Content</div>
+  </tng-expansion-panel>
+  <tng-expansion-panel>
+    <div tngExpansionTitle>Panel B</div>
+    <div tngExpansionContent>Panel B Content</div>
+  </tng-expansion-panel>
+</tng-accordion>
+<h6>Accordion with Styling </h6>
+<!--Accordion with rootKlass,headerKlass,contentPaddingKlass,contentBodyKlass-->
+<tng-accordion rootKlass="w-full" stackKlass="space-y-3">
+  <tng-expansion-panel
+    rootKlass="rounded-xl border border-red-400 bg-blue-200 shadow-sm"
+    headerKlass="text-slate-600"
+    contentPaddingKlass="px-5 pb-5 pt-2"
+    contentBodyKlass="text-sm text-red-600">
+     <div tngExpansionTitle>Panel B</div>
+    <div tngExpansionContent>Panel B Content</div>
+  </tng-expansion-panel>
+</tng-accordion>

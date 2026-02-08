@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { TngAccordion, TngExpansionPanel } from '@tailng-ui/ui/layout';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [ TngAccordion,TngExpansionPanel],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

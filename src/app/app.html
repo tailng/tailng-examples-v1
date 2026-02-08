@@ -1,6 +1,25 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic Copy Button</h6>
+<!--Copy button-->
+<tng-copy-button [text]="snippet()">
+  <span>Copy</span>
+  <span tngCopied>Copied</span>
+</tng-copy-button>
+<h6>Copy Button with Styling</h6>
+<!--Copy button with rootKlass and contentWrapKlass -->
+<tng-copy-button
+  [text]="snippet()"
+  variant="outline"
+  rootKlass="rounded-lg border-2 border-blue-300"
+  contentWrapKlass="inline-flex items-center gap-2 text-primary">
+  <span>Copy</span>
+  <span tngCopied>Copied</span>
+</tng-copy-button>
+<h6>Copy Button Variants</h6>
+<!--Copy button variants -->
+<tng-copy-button [text]="snippet()">Copy (ghost)</tng-copy-button>
+<tng-copy-button [text]="snippet()" variant="outline">Copy (outline)</tng-copy-button>
+<tng-copy-button [text]="snippet()" variant="solid">Copy (solid)</tng-copy-button>
+<h6>Copy Button Sizes</h6>
+<!--Copy button sizes -->
+<tng-copy-button [text]="snippet()" size="sm">Small</tng-copy-button>
+<tng-copy-button [text]="snippet()" size="md">Medium</tng-copy-button>

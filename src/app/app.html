@@ -1,6 +1,33 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
+<h6>Basic Expansion Panel</h6>
+<!--Basic expansion panel with title and content-->
+<tng-expansion-panel [open]="true" [disabled]="true">
+  <div tngExpansionTitle>What is TailNG?</div>
+  <div tngExpansionContent>
+    TailNG is a minimal Angular + Tailwind UI kit with klass hooks for theming.
   </div>
-</div>
+</tng-expansion-panel>
+<h6>Expansion Panel with styling</h6>
+<!--Basic expansion panel with rootKlass,
+headerKlass, titleKlass, iconWrapperKlass, chevronKlass,contentOuterKlass, contentClipKlass, contentBodyKlass, contentPaddingKlass.-->
+<tng-expansion-panel
+  rootKlass="rounded-xl border border-blue-400 bg-white shadow-sm"
+  headerKlass="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-red-400"
+  contentBodyKlass="text-sm text-slate-600"
+  chevronKlass="h-4 w-4 rounded duration-200 bg-blue-400 "
+>
+  <div tngExpansionTitle>What is TailNG?</div>
+  <div tngExpansionContent>
+    TailNG is a minimal Angular + Tailwind UI kit with klass hooks for theming.
+  </div>
+</tng-expansion-panel>
+<h6>Mutliple Expansion Panel</h6>
+<!--multiple panel with open state, disabled state, and padded state setting-->
+<tng-expansion-panel [open]="true" ><div tngExpansionTitle>Panel A</div>
+  <div tngExpansionContent>Content for panel A.</div>
+</tng-expansion-panel>
+<tng-expansion-panel [disabled]="true"><div tngExpansionTitle>Panel B</div>
+  <div tngExpansionContent>Content for panel B.</div>
+</tng-expansion-panel>
+<tng-expansion-panel [padded]="false"><div tngExpansionTitle>Panel C</div>
+  <div tngExpansionContent>Content for panel C.</div>
+</tng-expansion-panel>

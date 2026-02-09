@@ -1,6 +1,17 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic breadcrumbs</h6>
+<!--Basic breadcrumbs-->
+<tng-breadcrumbs [items]="itemsOneList()"></tng-breadcrumbs>
+<h6>Breadcrumbs with Styling</h6>
+<!--Breadcrumbs with linkKlass,currentKlass and separatorKlass-->
+<tng-breadcrumbs
+  [items]="itemsTwoList()"
+  linkKlass="text-blue-600 hover:underline"
+  currentKlass="text-slate-500 font-semibold"
+  separatorKlass="mx-2 text-slate-500"
+></tng-breadcrumbs>
+<h6>Breadcrumbs with home</h6>
+<!--Breadcrumbs with home starting-->
+<tng-breadcrumbs [home]="{ label: 'Home', route: '/' }" [items]="itemsOneList()"></tng-breadcrumbs>
+<h6>Breadcrumbs with Custom Separator</h6>
+<!--Breadcrumbs with Custom Separator-->
+<tng-breadcrumbs [items]="itemsTwoList()" separator="→"></tng-breadcrumbs>

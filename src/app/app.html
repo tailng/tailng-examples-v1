@@ -1,6 +1,32 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic Stepper</h6>
+<!--Basic Stepper-->
+<tng-stepper defaultIndex="0">
+  <tng-step>One</tng-step>
+  <tng-step>Two</tng-step>
+  <tng-step-panel [index]="0"><div class="rounded border p-4">Step 1 content</div></tng-step-panel>
+  <tng-step-panel [index]="1"><div class="rounded border p-4">Step 2 content</div></tng-step-panel>
+</tng-stepper>
+<h6>Basic Stepper with styling</h6>
+<!--Basic Stepper with styling-->
+<tng-stepper defaultIndex="0" headerKlass="inline-flex gap-1 rounded-lg bg-slate-100 p-1">
+  <tng-step
+    stepKlass="rounded-md px-3 py-2 text-sm font-medium"
+    activeKlass="bg-white text-slate-900 shadow-sm"
+    inactiveKlass="text-slate-600 hover:text-slate-900">One</tng-step>
+  <tng-step
+    stepKlass="rounded-md px-3 py-2 text-sm font-medium"
+    activeKlass="bg-white text-slate-900 shadow-sm"
+    inactiveKlass="text-slate-600 hover:text-slate-900">Two</tng-step>
+  <tng-step-panel [index]="0"><div class="px-3 py-2 text-sm border">Step 1</div></tng-step-panel>
+  <tng-step-panel [index]="1"><div class="px-3 py-2 text-sm border">Step 2</div></tng-step-panel>
+</tng-stepper>
+<h6>Basic Stepper with controlled index</h6>
+<!--Basic Stepper with controlled index-->
+ <tng-stepper [activeIndex]="index()" (activeIndexChange)="index.set($event)">
+  <tng-step>Step 1</tng-step>
+  <tng-step>Step 2</tng-step>
+  <tng-step-panel [index]="0"><div class="rounded border border-border p-4">Content 1</div></tng-step-panel>
+  <tng-step-panel [index]="1"><div class="rounded border border-border p-4">Content 2</div></tng-step-panel>
+</tng-stepper>
+<button class="rounded border px-3 py-2 text-sm" (click)="prev()">Prev</button>
+<button class="rounded border px-3 py-2 text-sm" (click)="next()">Next</button>

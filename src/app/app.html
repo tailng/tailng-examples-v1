@@ -1,6 +1,31 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic snackbar</h6>
+<!--basic snackbar-->
+<button (click)="showSnackbar()" class="border px-2 py-2">Show snackbar</button>
+<tng-snackbar-host [items]="items()" [position]="position()" (dismiss)="onDismiss($event)" />
+<h6>Snackbar with styling</h6>
+<!--basic snackbar with itemKlass and intentKlass-->
+<button (click)="showThemed()" class="border px-2 py-2">Show theme</button>
+<tng-snackbar-host
+  [items]="themedItems()"
+  position="bottom-center"
+  itemKlass="pointer-events-auto w-[min(28rem,calc(100vw-2rem))] rounded-lg border-2 shadow-lg"
+  [intentKlass]="customIntentKlass"
+  (dismiss)="onThemedDismiss($event)"
+/>
+<h6>Snackbar Positons</h6>
+<!--basic snackbar with different postions-->
+<select
+  class="rounded-md border border-border bg-bg px-2 py-1 text-sm"
+  [value]="position()"
+  (change)="position.set($any($event.target).value)"
+>
+  <option value="top-left">Top Left</option>
+  <option value="top-center">Top Center</option>
+  <option value="top-right">Top Right</option>
+  <option value="bottom-left">Bottom Left</option>
+  <option value="bottom-center">Bottom Center</option>
+  <option value="bottom-right">Bottom Right</option>
+</select>
+<button class="rounded-md bg-primary px-3 py-1.5 text-sm text-on-primary" (click)="push('default')">
+  Show
+</button>

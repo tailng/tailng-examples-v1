@@ -1,6 +1,22 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic Code Block</h6>
+<!--Basic Code Block-->
+<tng-code-block [content]="snippet()" language="typescript">
+</tng-code-block>
+<h6>Code Block with styling</h6>
+<!--Code Block with rootKlass and preKlass-->
+<tng-code-block [content]="snippet()" rootKlass="rounded-xl border-2 border-red-300 bg-blue-200" preKlass="text-sm p-4">
+</tng-code-block>
+<h6>Code Block with lines</h6>
+<!-- Code Block with lines-->
+<tng-code-block [content]="snippet()" [showLineNumbers]="true" gutterKlass="text-black">
+</tng-code-block>
+<h6>Code Block with highlighter</h6>
+<!--Code Block with highlighter-->
+<tng-code-block
+  [content]="snippet()"
+  [showLineNumbers]="true"
+  [wrap]="true"
+  [highlighter]="highlighter"
+  language="typescript"
+>
+</tng-code-block>

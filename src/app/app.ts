@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
+import { TngDrawer } from '@tailng-ui/ui/navigation';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [TngDrawer],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
 export class App {
+  drawerOpenRight = signal(false);
+  drawerOpenbottom = signal(false);
+  postionOpen = signal(false);
 }

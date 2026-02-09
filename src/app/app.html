@@ -1,6 +1,39 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
+<h6>Basic Dialog</h6>
+<!--Basic Dialog box open-->
+<button (click)="open.set(true)" class="border px-2 py-2">Open dialog</button>
+<tng-dialog [open]="open()" (closed)="onClosed($event)" ariaLabel="Confirm">
+  <div tngDialogHeader class="font-semibold">Confirm</div>
+  <p class="text-sm">Are you sure?</p>
+  <div tngDialogFooter class="flex justify-end gap-2">
+    <button (click)="onClosed('cancel')">Cancel</button>
+    <button (click)="onClosed('confirm')">OK</button>
   </div>
-</div>
+</tng-dialog>
+<h6>Basic Dialog with styling</h6>
+<!--Basic Dialog with backdropKlass,panelKlass,headerWrapKlass and footerWrapKlass-->
+<button
+  type="button"
+  class="rounded-md bg-primary px-3 py-2 text-sm text-on-primary"
+  (click)="openTwo.set(true)"
+>
+  Open styled dialog
+</button>
+<tng-dialog
+  [open]="openTwo()"
+  (closed)="openTwo.set(false)"
+  backdropKlass="fixed inset-0 bg-blue-200"
+  panelKlass="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 rounded-xl border p-4"
+  headerWrapKlass="text-red-600"
+>
+  <div tngDialogHeader class="border-0 p-0 font-semibold">Custom panel</div>
+  <p class="text-sm text-muted">backdropKlass and panelKlass overrides.</p>
+  <div tngDialogFooter class="border-0 justify-end p-0 pt-2">
+    <button
+      type="button"
+      class="rounded-md bg-primary px-3 py-2 text-sm text-on-primary"
+      (click)="openTwo.set(false)"
+    >
+      Close
+    </button>
+  </div>
+</tng-dialog>

@@ -1,6 +1,35 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
+<h6>basic Sidenav</h6>
+<div class="flex h-48 rounded-md border ">
+  <tng-sidenav [collapsed]="collapsed()">
+    <div tngSidenavHeader class="px-4 py-3 font-semibold">App</div>
+    <div class="flex flex-col gap-1 p-2">
+      <a class="rounded px-3 py-2 text-sm">Dashboard</a>
+      <a class="rounded px-3 py-2 text-sm">Settings</a>
+    </div>
+    <div tngSidenavFooter class="border-t px-3 py-2 text-xs">v1.0</div>
+  </tng-sidenav>
+  <div class="flex-1 p-4 text-sm">Content</div>
 </div>
+<button (click)="collapsed.set(!collapsed())" class="border px-2">Toggle</button>
+<hr>
+<h6>basic Sidenav with styling</h6>
+<!--Sidenav with rootKlass,contentKlass,footerKlass,collapsedKlass and expandedKlass-->
+<div class="flex h-48 rounded-md border">
+  <tng-sidenav
+    [collapsed]="collapsed()"
+    expandedKlass="w-80"
+    collapsedKlass="w-30"
+    rootKlass="bg-slate-200"
+    contentKlass="text-red-700"
+    footerKlass="bg-slate-100"
+  >
+    <div tngSidenavHeader class="px-4 py-3 font-semibold">App</div>
+    <div class="flex flex-col gap-1 p-2">
+      <a class="rounded px-3 py-2 text-sm">Dashboard</a>
+      <a class="rounded px-3 py-2 text-sm ">Settings</a>
+    </div>
+    <div tngSidenavFooter class="border-t px-3 py-2 text-xs">v1.0</div>
+  </tng-sidenav>
+  <div class="flex-1 p-4 text-sm">Content</div>
+</div>
+<button (click)="collapsed.set(!collapsed())">Toggle</button>

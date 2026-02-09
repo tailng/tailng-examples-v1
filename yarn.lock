@@ -1566,31 +1566,31 @@
   resolved "https://registry.yarnpkg.com/@standard-schema/spec/-/spec-1.1.0.tgz#a79b55dbaf8604812f52d140b2c9ab41bc150bb8"
   integrity sha512-l2aFy5jALhniG5HgqrD6jXLi/rUWrKvqN/qJx6yoJsgKhblVd+iqqU4RCXavm/jPityDo5TCvKMnpjKnOriy0w==
 
-"@tailng-ui/cdk@^0.19.0":
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/@tailng-ui/cdk/-/cdk-0.19.0.tgz#dd76fc3b21168740aaf82d093852b8b544d2020f"
-  integrity sha512-62KW9NFKCISj+1vUu3bguiDnAI3ok0VM+znPErPsemWt20c1zVJTRTq12RRXglMUAJkU5uv6WVRqih3Y02m7JA==
-  dependencies:
-    tslib "^2.6.0"
-
-"@tailng-ui/icons@^0.19.0":
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/@tailng-ui/icons/-/icons-0.19.0.tgz#1b6cfab244035d5be96ab214a3214e2e3cd512f4"
-  integrity sha512-pB4oqaPaaNd64Qcj6L8FlETdXj5uodGroSOuymMdqhJjc1EGiPPl6IQ6saaf3/MXdt1jQIS1igC7ctktqhhFpA==
-  dependencies:
-    tslib "^2.6.0"
-
-"@tailng-ui/theme@^0.19.0":
-  version "0.19.0"
-  resolved "https://registry.yarnpkg.com/@tailng-ui/theme/-/theme-0.19.0.tgz#6b23429df0ecbeabbe9938d78904e163296871a5"
-  integrity sha512-TqZEmBSJmndlhRmm3hEXGVle3A+W5HTxab5XAgarMmE0tGDkfwD4PEdf/1x6roqxMmUWCkuUdlg5YUY3MGbijQ==
-  dependencies:
-    tslib "^2.6.0"
-
-"@tailng-ui/ui@^0.20.0":
+"@tailng-ui/cdk@^0.20.0":
   version "0.20.0"
-  resolved "https://registry.yarnpkg.com/@tailng-ui/ui/-/ui-0.20.0.tgz#b15d1087c069efb4f47f4ef77eb6cae24667a359"
-  integrity sha512-S95Yhc+OATpe2kcJpdEPRNof6kMK+geYCeEGUlahAGfDv323lVmTzrY4j2xPQ4TmyUxkQdSAaZ9MpSgyS9nQFw==
+  resolved "https://registry.yarnpkg.com/@tailng-ui/cdk/-/cdk-0.20.0.tgz#5b2fb5131c11550a585bb6f4ab457ae8a1ac4edb"
+  integrity sha512-aj0rsAPZYLXPXOR0T9nYlgvTjjSPtt6d43eET7Z9oibYSNBFJYhSSoe7LQPwdUCDnvcimUs8Zhn0jzzn7heJng==
+  dependencies:
+    tslib "^2.6.0"
+
+"@tailng-ui/icons@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@tailng-ui/icons/-/icons-0.20.0.tgz#36ace45d5949f936e01291568e765d2b5ef70b62"
+  integrity sha512-zh9KEpyZIeN1HhsIGYkRZbJ00YadljZfkcbqDUuzkEcYncw+sIXvjX7xtb9nsLs3LdAzG4yTmDHbDIyAHzTyxw==
+  dependencies:
+    tslib "^2.6.0"
+
+"@tailng-ui/theme@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@tailng-ui/theme/-/theme-0.20.0.tgz#bc132c60ee81e7097e9debcc33f460e1ca4f491c"
+  integrity sha512-f8Hm93ASSusHQ+ZwwCAVQfY/PgT8Rs/FhiV/K1HYGx1nrDwjpazqMQJMzT+fcWtShYDBvZnH70rGBQmzOHposw==
+  dependencies:
+    tslib "^2.6.0"
+
+"@tailng-ui/ui@^0.22.0":
+  version "0.22.0"
+  resolved "https://registry.yarnpkg.com/@tailng-ui/ui/-/ui-0.22.0.tgz#88e5215690851c6a2a24b6223c88382962763876"
+  integrity sha512-nJXwHH/f6e/SwxRUIpVWxn6amqtYdGziI/QtsxoLDy69ocOzFGnNkivBdBxNNpRHT43PR47wsfslCeCia4MKfg==
   dependencies:
     tslib "^2.6.0"
 

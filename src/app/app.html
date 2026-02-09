@@ -1,6 +1,29 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic Menu</h6>
+<!--Basic menu bar-->
+<tng-menu>
+  <button tngMenuTrigger type="button" class="rounded-md border px-3 py-2">Open menu</button>
+  <ng-template tngMenuTemplate>
+    <button tngMenuItem type="button" class="px-2 py-2">Profile</button>
+    <button tngMenuItem type="button" class="px-2 py-2">Settings</button>
+  </ng-template>
+</tng-menu>
+<h6>Menu with Styling</h6>
+<!--menu with panelKlass and triggerKlass styling-->
+<tng-menu
+  panelKlass="p-2 min-w-48 rounded-lg border bg-blue-200 shadow-lg text-white"
+  triggerKlass="rounded-md bg-blue-700 px-3 py-2 text-sm">
+  <button tngMenuTrigger type="button">Open menu</button>
+  <ng-template tngMenuTemplate>
+    <button tngMenuItem type="button" class="px-2 py-2">Profile</button>
+    <button tngMenuItem type="button" class="px-2 py-2">Settings</button>
+  </ng-template>
+</tng-menu>
+<h6>Menu with modal(backdrop)</h6>
+<!--menu to show a backdrop and close on outside click or Escape.-->
+<tng-menu [modal]="true" panelKlass="p-2 min-w-48">
+  <button tngMenuTrigger type="button" class="rounded-md border px-3 py-2">Open modal menu</button>
+  <ng-template tngMenuTemplate>
+    <button tngMenuItem type="button" class="w-full rounded px-3 py-2">Option A</button>
+    <button tngMenuItem type="button" class="w-full rounded px-3 py-2">Option B</button>
+  </ng-template>
+</tng-menu>

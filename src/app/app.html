@@ -1,6 +1,36 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<form [formGroup]="form">
+  <!-- Basic form field -->
+  <h6>Basic form field</h6>
+
+  <tng-form-field label="Email" hint="We'll never share your email.">
+    <tng-text-input formControlName="email" placeholder="you@example.com" />
+  </tng-form-field>
+
+  <!-- Form field using labelklass -->
+  <h6>Custom label</h6>
+  <tng-form-field
+    label="Custom label"
+    labelKlass="text-base font-bold text-blue-500"
+    [required]="true"
+  >
+    <tng-text-input formControlName="name" placeholder="Your name" />
+  </tng-form-field>
+
+  <!-- Form field using hintKlass and errorKlass -->
+  <h6>Form field withhint and error</h6>
+  <tng-form-field
+    label="Email"
+    hint="We'll never share it."
+    error="Invalid email"
+    hintKlass="text-xs text-black"
+    errorKlass="text-sm font-semibold text-red-600"
+  >
+    <tng-text-input formControlName="email" placeholder="Email" />
+  </tng-form-field>
+
+  <!-- Form field with Required and Error -->
+  <h6>Form field with Required and Error</h6>
+  <tng-form-field label="Email" [required]="true">
+    <tng-text-input formControlName="email" placeholder="you@example.com" />
+  </tng-form-field>
+</form>

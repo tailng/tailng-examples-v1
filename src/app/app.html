@@ -1,6 +1,21 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<!-- Basic Paginator -->
+<h6>Basic Paginator</h6>
+<tng-paginator
+  [count]="counta()"
+  [page]="pagea()"
+  [pageSize]="pageSizea()"
+  (change)="onChangea($event)"
+></tng-paginator>
+
+<!-- Paginator activePageKlass -->
+<h6>Paginator with styling</h6>
+<tng-paginator activePageKlass="bg-blue-500 text-black rounded-full" pageKlass="rounded-full" 
+[count]="countb()"
+  [page]="pageb()"
+  [pageSize]="pageSizeb()"
+  (change)="onChangeb($event)"
+  ></tng-paginator>
+
+<!-- Paginator with hidden page size selector -->
+  <h6>Paginator with hidden page size selector</h6>
+  <tng-paginator [hidePageSize]="true" [count]="countc()" [page]="pagec()" [pageSize]="pageSizec()" (change)="onChangec($event)"></tng-paginator>

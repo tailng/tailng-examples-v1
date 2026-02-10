@@ -1,6 +1,33 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<!-- Basic Popover -->
+<h6>Basic Popover</h6>
+<tng-popover>
+  <button tngPopoverTrigger class="border px-2 py-2">Open popover</button>
+  <ng-template #popoverContent>
+    <div class="min-w-56 space-y-2 text-sm">
+      <div class="font-medium">Quick settings</div>
+      <p class="text-muted-foreground">Click outside or Escape to close.</p>
+    </div>
+  </ng-template>
+</tng-popover>
+
+<!-- Custom Popover -->
+<h6>Custom Popover</h6>
+<tng-popover placement="bottom-start" panelKlass="p-3 rounded-lg border border-border bg-bg shadow-lg">
+  <button tngPopoverTrigger class="rounded-md bg-primary px-3 py-1.5 text-sm text-on-primary">Styled trigger</button>
+  <ng-template #popoverContent>
+    <div class="min-w-56 space-y-2 text-sm">
+      <div class="font-medium">Quick settings</div>
+      <p class="text-muted-foreground">Click outside or Escape to close.</p>
+    </div>
+  </ng-template>
+</tng-popover>
+
+<!-- Controlled Popover -->
+<h6>Controlled Popover</h6>
+<tng-popover [open]="popoverOpen()" (openChange)="popoverOpen.set($event)" placement="bottom-start" panelKlass="p-3">
+  <button tngPopoverTrigger class="border px-2 py-2">Controlled trigger</button>
+  <div tngPopoverContent><div class="min-w-56 space-y-2 text-sm">
+      <div class="font-medium">Quick settings</div>
+      <p class="text-muted-foreground">Click outside or Escape to close.</p>
+    </div></div>
+</tng-popover>

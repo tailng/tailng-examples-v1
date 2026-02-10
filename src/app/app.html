@@ -1,6 +1,45 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<h6>Basic Table</h6>
+<!--Basic Table-->
+<tng-table [rows]="rows()" rowKey="id" emptyText="No data">
+  <tng-col id="name" header="Name" [value]="nameValue"></tng-col>
+  <tng-col id="score" header="Score" align="left" [value]="scoreValue"></tng-col>
+</tng-table>
+<h6>Table with styling</h6>
+<!--Table with tableKlass and theadKlass-->
+<tng-table
+  [rows]="rows()"
+  rowKey="id"
+  tableKlass="w-full text-xs border-3"
+  theadKlass="bg-blue-400"
+>
+  <tng-col id="name" header="Name" [value]="nameValue"></tng-col>
+  <tng-col id="score" header="Score" align="right" [value]="scoreValue"></tng-col>
+</tng-table>
+<h6>Table with column styling</h6>
+<!--Table with klass-->
+<tng-table [rows]="rows()" rowKey="id" emptyText="No data">
+  <tng-col id="name" header="Name" [value]="nameValue" klass="font-medium bg-yellow-200"></tng-col>
+  <tng-col
+    id="score"
+    header="Score"
+    align="right"
+    [value]="scoreValue"
+    klass="text-red-800"
+  ></tng-col>
+</tng-table>
+<h6>Table with custom template</h6>
+<!--Table with custom template-->
+<tng-table [rows]="rows()" rowKey="id">
+  <tng-col id="name" header="Name" [value]="nameValue"></tng-col>
+  <tng-col id="score" header="Score" align="right" [value]="scoreValue">
+    <ng-template tngCell let-value="value">
+      <span [class]="scoreClass(value)">{{ value }}</span>
+    </ng-template>
+  </tng-col>
+</tng-table>
+<h6>Table with empty state</h6>
+<!--Table with  empty state-->
+<tng-table [rows]="emptyRows()" rowKey="id" emptyText="No data yet">
+  <tng-col id="name" header="Name" [value]="nameValue"></tng-col>
+  <tng-col id="score" header="Score" align="right" [value]="scoreValue"></tng-col>
+</tng-table>

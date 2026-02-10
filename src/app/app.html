@@ -1,6 +1,19 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+
+<form [formGroup]="form">
+
+  <!-- Basic slider -->
+  <h6>Basic Slider</h6>
+  <tng-slider formControlName="volume" [min]="0" [max]="100" [step]="1" />
+
+  <!-- Custom slider with custom trackklass and fillklass -->
+  <h6>Custom Slider</h6>
+  <tng-slider formControlName="volume" trackKlass="h-3 bg-blue-200" fillKlass="bg-blue-500" />
+
+  <!-- Custom slider with custom thumbKlass -->
+  <h6>Custom Slider with thumbKlass</h6>
+  <tng-slider formControlName="volume" thumbKlass="h-5 w-5 shadow-lg border-2 border-blue-500" />
+
+  <!-- Disabled slider -->
+  <h6>Disabled Slider</h6>
+  <tng-slider formControlName="volume" [min]="0" [max]="100" [disabled]="true" />
+</form>

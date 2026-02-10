@@ -1,6 +1,22 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+
+<form [formGroup]="form">
+  <!-- Basic select component -->
+  <h6>Basic Select</h6>
+  <tng-select
+    formControlName="fruit"
+    [options]="fruits"
+    [displayWith]="displayFruit"
+    placeholder="Choose a fruit…"
+  />
+
+  <!-- Custom select with triggerKlass -->
+  <h6>Custom select</h6>
+   <tng-select formControlName="fruit" [options]="fruits" [displayWith]="displayFruit"
+    placeholder="Choose…" triggerKlass="w-full flex items-center justify-between border-2 border-primary rounded-lg px-4 py-2" />
+
+    <!-- Disabled select component -->
+    <h6>Disabled Select</h6>
+<tng-select formControlName="fruit" [options]="fruits" [displayWith]="displayFruit"
+  placeholder="Disabled" [disabled]="true" />
+
+</form>

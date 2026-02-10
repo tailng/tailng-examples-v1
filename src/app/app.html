@@ -1,6 +1,34 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<form [formGroup]="form">
+  <!-- Basic Slide toggle -->
+  <h6>Basic Slide toggle</h6>
+  <tng-slide-toggle formControlName="enabled" label="Enable feature" />
+
+  <!-- Custom Slide toggle using rootKlass -->
+  <h6>Custom Slide toggle with rootKlass</h6>
+  <tng-slide-toggle
+    formControlName="enabled"
+    label="Custom root"
+    rootKlass="inline-flex items-center gap-3 p-2 rounded-lg border-2 border-blue-500"
+  />
+
+  <!-- Custom Slide toggle using trackKlass -->
+  <h6>Custom slide toggle with trackklass</h6>
+  <tng-slide-toggle formControlName="enabled" label="Wide track" trackKlass="h-4 w-14" />
+
+  <!-- Custom Slide toggle using thumbKlass -->
+  <h6>Custom slide toggle with thumbKlass</h6>
+  <tng-slide-toggle formControlName="enabled" label="Large thumb" thumbKlass="h-4 w-4 shadow-lg" />
+
+  <!-- Custom Slide toggle using labelKlass -->
+  <h6>Custom slide toggle with labelKlass</h6>
+  <tng-slide-toggle
+    formControlName="enabled"
+    label="Custom label"
+    labelKlass="text-lg font-bold text-primary"
+  />
+
+  <!-- Disabled Slide toggle -->
+  <h6>Disabled Slide toggle</h6>
+  <tng-slide-toggle formControlName="notifications" label="Enabled" />
+  <tng-slide-toggle formControlName="darkMode" label="Disabled" [disabled]="true" />
+</form>

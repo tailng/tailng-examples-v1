@@ -1,6 +1,28 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<form [formGroup]="form">
+  <!-- Basic Button toggle -->
+  <h6>Basic Button Toggle</h6>
+  <tng-button-toggle formControlName="view" [options]="viewOptions" />
+
+  <!-- Custom Button toggle using groupKlass -->
+  <h6>Custom Button Toggle with groupklass</h6>
+  <tng-button-toggle
+    formControlName="view"
+    [options]="viewOptions"
+    groupKlass="inline-flex rounded-lg border border-blue-500 overflow-hidden"
+  />
+
+  <!-- Custom Button toggle using activeButtonKlass and inactiveButtonKlass -->
+  <h6>Custom Button Toggle with activeButtonKlass and inactiveButtonKlass</h6>
+  <tng-button-toggle
+    formControlName="view"
+    [options]="viewOptions"
+    buttonKlass="px-4 py-2 text-sm font-medium transition"
+    activeButtonKlass="bg-blue-500 text-on-white"
+    inactiveButtonKlass="bg-bg text-fg hover:bg-blue-500/10"
+  />
+
+  <!-- Custom Button toggle with one option disabled -->
+  <h6>Custom Button Toggle with one option disabled</h6>
+  <tng-button-toggle formControlName="view" [options]="viewOptionsWithDisabled" />
+  <!-- viewOptionsWithDisabled: one option has disabled: true -->
+</form>

@@ -1,6 +1,30 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
+<form [formGroup]="form">
+  <!-- Basic Radio button -->
+  <h6>Basic Radio button</h6>
+  <tng-radio-button formControlName="choice" name="choice" value="a" label="Apple" />
+  <tng-radio-button formControlName="choice" name="choice" value="b" label="Orange" />
+  <tng-radio-button formControlName="choice" name="choice" value="c" label="Mango" />
+
+  <!-- Custom Radio button -->
+  <h6>Custom Radio button</h6>
+  <tng-radio-button
+    formControlName="choice"
+    name="choice"
+    value="a"
+    label="Apple"
+    rootKlass="inline-flex items-center gap-3 cursor-pointer p-2 rounded border-2 border-blue-500"
+  />
+<!-- Multiple group Radio button -->
+  <h6>Multiple group Radio button</h6>
+  <div>
+    <div class="text-xs font-semibold text-muted mb-1">Account type</div>
+    <tng-radio-button formControlName="account" name="account" value="Personal" label="Personal" />
+    <tng-radio-button formControlName="account" name="account" value="Business" label="Business" />
   </div>
-</div>
+  <div>
+    <div class="text-xs font-semibold text-muted mb-1">Subscription Plan</div>
+    <tng-radio-button formControlName="subscription" name="subscription" value="basic" label="Basic" />
+    <tng-radio-button formControlName="subscription" name="subscription" value="standard" label="Standard" />
+    <tng-radio-button formControlName="subscription" name="subscription" value="premium" label="Premium" />
+  </div>
+</form>

@@ -1,6 +1,40 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<!-- Basic Ripple button -->
+<h6>Basic Ripple</h6>
+<button
+  class="rounded-md border border-border px-4 py-2 text-sm"
+  tngRipple
+  [rippleDisabled]="disabled"
+  [rippleCentered]="centered"
+  [rippleColor]="color"
+  [rippleOpacity]="opacity"
+  [rippleDuration]="duration"
+>
+  Button
+</button>
+
+<!-- Disable Ripple -->
+<h6>Disabled Ripple</h6>
+<button class="rounded-md border border-border px-4 py-2 text-sm" tngRipple [rippleDisabled]="true">
+  Button
+  <!-- rippleDisabled=true (no ripple) -->
+</button>
+
+<!-- Disabled attribute not ripple -->
+<h6>Disabled Attribute</h6>
+<button class="rounded-md border border-border px-4 py-2 text-sm opacity-60" tngRipple disabled>
+  Button
+  <!-- disabled attribute (no ripple) -->
+</button>
+
+<!-- Custom Ripple -->
+<h6>Custom Ripple</h6>
+<button
+  class="rounded-md border border-border px-4 py-2 text-sm"
+  tngRipple
+  rippleColor="#22c55e"
+  [rippleOpacity]="0.28"
+  [rippleDuration]="850"
+>
+Custom Button
+  <!-- Slow + strong (green) -->
+</button>

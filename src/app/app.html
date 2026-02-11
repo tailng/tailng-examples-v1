@@ -1,6 +1,51 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+    <tng-table [rows]="rows()" rowKey="id" emptyText="No invoices">
+      <!-- Customer -->
+      <tng-col id="customer" header="Customer" [value]="customerValue" [filter]="filterText('Search customer…')">
+        <ng-template tngHeader let-colId="colId" let-header="header">
+          <div class="flex w-full items-center justify-between gap-2">
+            <button
+              type="button"
+              class="inline-flex items-center gap-1 hover:underline"
+              tngSortHeader
+              [colId]="colId"
+            >
+              <span class="truncate">{{ header }}</span>
+            </button>
+
+            <tng-icon name="bootstrapFunnel" 
+            class="rounded-md border border-border bg-on-primary text-primary px-2 py-1 text-xs"
+            tngFilterTrigger
+            [colId]="colId"
+            panelKlass="p-1 min-w-48"></tng-icon>
+          </div>
+        </ng-template>
+      </tng-col>
+
+      <!-- Amount -->
+      <tng-col id="amount" header="Amount" align="right" [value]="amountValue" [filter]="filterNumber()">
+        <ng-template tngHeader let-colId="colId" let-header="header">
+          <div class="flex w-full items-center justify-end gap-2">
+            <button
+              type="button"
+              class="inline-flex items-center gap-1 hover:underline"
+              tngSortHeader
+              [colId]="colId"
+            >
+              <span>{{ header }}</span>
+            </button>
+
+            <tng-icon name="bootstrapFunnel" 
+            class="rounded-md border border-border bg-on-primary text-primary px-2 py-1 text-xs"
+            tngFilterTrigger
+            [colId]="colId"></tng-icon>
+          </div>
+        </ng-template>
+
+        <ng-template tngCell let-value="value">
+          <span class="font-semibold">{{ value }}</span>
+        </ng-template>
+      </tng-col>
+
+
+      <tng-filter-panel />
+    </tng-table>

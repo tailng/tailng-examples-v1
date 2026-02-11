@@ -1,6 +1,35 @@
-<div class="flex items-center justify-center min-h-screen">
-  <div class="text-center">
-    <h1 class="text-4xl font-bold mb-4">Welcome to Angular</h1>
-    <p class="text-lg text-gray-600">Your Angular application is running successfully!</p>
-  </div>
-</div>
+<!-- Basic Progress Bar -->
+<h6>Basic Progress Bar</h6>
+<tng-progress-bar
+  [mode]="mode"
+  [value]="value"
+  [max]="max"
+  [disableAnimation]="disableAnimation"
+  [rootKlass]="rootKlass"
+  [trackKlass]="trackKlass"
+  [barKlass]="barKlass"
+  [heightKlass]="heightKlass"
+/>
+
+<!-- Custom Progress Bar -->
+<h6>Custom Progress Bar</h6>
+<tng-progress-bar [value]="30" trackKlass="bg-border" barKlass="bg-red-500" heightKlass="h-1" />
+
+<!-- Custom Progress Bar with Root Class -->
+<h6>Custom Progress Bar with Root Class</h6>
+<tng-progress-bar
+  [value]="45"
+  rootKlass="w-64"
+  trackKlass="bg-border"
+  barKlass="bg-warning"
+  heightKlass="h-2"
+/>
+
+<!-- Indeterminate Progress Bar -->
+<h6>Indeterminate Progress Bar</h6>
+<tng-progress-bar
+  mode="indeterminate"
+  trackKlass="bg-border"
+  barKlass="bg-primary"
+  heightKlass="h-1"
+/>

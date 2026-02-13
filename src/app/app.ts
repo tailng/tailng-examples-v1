@@ -9,7 +9,7 @@ import {
   TngSortHeaderDirective,
   TngColumnFilterMeta,
 } from '@tailng-ui/ui/table';
-
+import { TngIcon } from '@tailng-ui/icons/icon'
 type InvoiceRow = {
   id: string;
   customer: string;
@@ -20,7 +20,7 @@ type InvoiceRow = {
 
 @Component({
   selector: 'app-root',
-  imports: [TngTable, TngCol, TngCellDef, TngHeaderDef, TngFilterPanel, TngFilterTrigger, TngSortHeaderDirective],
+  imports: [TngTable, TngCol, TngCellDef,TngIcon, TngHeaderDef, TngFilterPanel, TngFilterTrigger, TngSortHeaderDirective],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
